@@ -90,4 +90,5 @@ async function deleteFood(id) {
     await db.run(`DELETE FROM foods WHERE id = ?`, [id]);
 }
 
+// 上記関数をモジュールとしてエクスポート
 module.exports = { createUser, authenticateUser, getFoods, addFood, deleteFood };

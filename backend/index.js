@@ -4,17 +4,22 @@ const session = require('express-session');
 // ルートハンドラ用モジュールのインポート
 const routes = require('./routes');
 
+// Expressアプリの使用
 const app = express();
 
+// フォーム利用のための設定
 app.use(express.urlencoded({ extended: false }));
+// JSONを扱うための設定
 app.use(express.json());
 
+// セッション管理
 app.use(session({
     secret: 'your_secret_key',
     resave: false,
     saveUninitialized: true
 }));
 
+// public以下の静的ファイルを使用
 app.use(express.static('public'));
 
 

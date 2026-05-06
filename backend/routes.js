@@ -34,3 +34,32 @@ router.post('/logout', (req, res) => {
         }
     });
 });
+
+// 食材の一覧取得
+router.get('/foods', async (req, res) => {
+    if (!req.session.username) {
+        return res.status(401).send('ユーザー情報を確認できませんでした。');
+    }
+    const foods = await getFoods(req.session.username);
+    res.json(foods);
+});
+
+// 食材の追加
+router.post('/foods', async (req, res) => {
+    if (!req.session.username) {
+        return res.status(401).send('ユーザー情報を確認できませんでした。');
+    }
+    await addFood(req.session.username, req.body);
+    res.status(201).send('食材をリストに追加しました！');
+});
+
+// 食材の削除
+router.delete('/foods/:id', async (req, res) => {
+    if (!req.session.username) {
+        return res.status(401).send('ユーザー情報を確認できませんでした。');
+    }
+    await deleteFood(req.params.id);
+    res.status(200).send('食材をリストから削除しました！');
+});
+
+module.exports = router;

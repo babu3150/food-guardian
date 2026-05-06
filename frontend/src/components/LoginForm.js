@@ -1,10 +1,12 @@
 import React, { use, useState } from "react";
 
 function LoginForm( { onLogin } ) {
+    // 3つのステートを定義し、フォーム送信時に実行
     const { username, setUsername } = useState('');
     const { password, setPassword } = useState('');
     const { error, setError } = useState('');
 
+    // フォーム送信時に実行
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch('/api/login', {

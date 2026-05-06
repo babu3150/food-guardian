@@ -12,7 +12,7 @@ router.use(session({
     saveUninitialized: false
 }));
 
-// ログイン
+// ログイン用APIエンドポイント
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
     const authenticated = await authenticateUser(username, password);
@@ -24,7 +24,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// ログアウト
+// ログアウト用APIエンドポイント
 router.post('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -35,7 +35,7 @@ router.post('/logout', (req, res) => {
     });
 });
 
-// 食材の一覧取得
+// 食材の一覧取得用APIエンドポイント
 router.get('/foods', async (req, res) => {
     if (!req.session.username) {
         return res.status(401).send('ユーザー情報を確認できませんでした。');
@@ -44,7 +44,7 @@ router.get('/foods', async (req, res) => {
     res.json(foods);
 });
 
-// 食材の追加
+// 食材の追加用APIエンドポイント
 router.post('/foods', async (req, res) => {
     if (!req.session.username) {
         return res.status(401).send('ユーザー情報を確認できませんでした。');
@@ -53,7 +53,7 @@ router.post('/foods', async (req, res) => {
     res.status(201).send('食材をリストに追加しました！');
 });
 
-// 食材の削除
+// 食材の削除用APIエンドポイント
 router.delete('/foods/:id', async (req, res) => {
     if (!req.session.username) {
         return res.status(401).send('ユーザー情報を確認できませんでした。');

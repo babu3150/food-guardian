@@ -1,0 +1,29 @@
+import React, { useState } from "react";
+
+function FoodForm({ onAddFood }) {
+    // 食材、期限、数量のステートを定義
+    const [food, setFood] = useState('');
+    const [expiration_date, setExpirationDate] = useState('');
+    const [quantity, setQuantity] = useState('');
+
+    // フォーム送信時に実行
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newFood = { food, expiration_date, quantity };
+        onAddFood(newFood);
+        setFood('');
+        setExpirationDate();
+        setQuantity('');
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材" required />
+            <input type="text" value={expiration_date} onChange={(e) => setExpirationDate(e.target.value)} placeholder="期限" required />
+            <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="数量" required />
+            <button type="submit">食材の追加</button>
+        </form>
+    );
+}
+
+export default FoodForm;

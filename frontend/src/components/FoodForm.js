@@ -8,11 +8,13 @@ function FoodForm({ onAddFood }) {
 
     // フォーム送信時に実行
     const handleSubmit = (e) => {
+        // デフォルトのフォーム送信をキャンセル
         e.preventDefault();
         const newFood = { food, expiration_date, quantity };
         onAddFood(newFood);
+        // フォーム送信後に3つの入力欄を空にする
         setFood('');
-        setExpirationDate();
+        setExpirationDate('');
         setQuantity('');
     };
 

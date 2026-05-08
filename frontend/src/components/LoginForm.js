@@ -8,6 +8,7 @@ function LoginForm( { onLogin } ) {
 
     // フォーム送信時に実行
     const handleSubmit = async (e) => {
+        // デフォルトのフォーム送信をキャンセル
         e.preventDefault();
         const response = await fetch('/api/login', {
             method: 'POST',

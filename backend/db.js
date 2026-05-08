@@ -35,15 +35,15 @@ async function initDB() {
    /* foodsテーブルの作成
    id // 主キー
    username // ユーザー名
-   food // 食材
+   name // 食材名
    expiration_date // 消費or賞味期限
-   quantity // 数量
+   quantity // 食材の数量
    */
   await db.exec(`
     CREATE TABLE IF NOT EXISTS foods (
       id INTEGER PRIMARY KEY,
       username TEXT,
-      food TEXT NOT NULL,
+      name TEXT NOT NULL,
       expiration_date TEXT,
       quantity INTEGER NOT NULL
     )
@@ -79,9 +79,9 @@ async function getFoods(username) {
 }
 
 // 食材の追加
-async function addFood(username, { food, expiration_date, quantity }) {
+async function addFood(username, { name, expiration_date, quantity }) {
     const db = await dbPromise;
-    await db.run(`INSERT INTO foods (username, food, expiration_date, quantity) VALUES (?, ?, ?, ?)`, [username, food, expiration_date, quantity]);
+    await db.run(`INSERT INTO foods (username, name, expiration_date, quantity) VALUES (?, ?, ?, ?)`, [username, name, expiration_date, quantity]);
 }
 
 // 食材の削除

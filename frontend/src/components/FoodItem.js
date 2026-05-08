@@ -4,8 +4,7 @@ import React from "react";
 function FoodItem({ food, onDelete }) {
     return (
         <div className="food-item">
-            {/* ここはfood.nameとなるよう修正する */}
-            <h3>{food.food}</h3>
+            <h3>{food.name}</h3>
             <p>{food.expiration_date}</p>
             <p>{food.quantity}</p>
             <button className="delete" onClick={onDelete}>削除</button>

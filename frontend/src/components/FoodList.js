@@ -4,9 +4,9 @@ import FoodItem from './FoodItem';
 function FoodList({ foods, onDeleteFood }) {
     return (
         <div>
-            {foods.map((food) => {
+            {foods.map((food) => (
                 <FoodItem key={food.id} food={food} onDelete={() => onDeleteFood(food.id)} />
-            })}
+            ))}
         </div>
     );
 }

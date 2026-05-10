@@ -4,25 +4,22 @@ function FoodForm({ onAddFood }) {
     // 食材、期限、数量のステートを定義
     const [name, setName] = useState('');
     const [expiration_date, setExpirationDate] = useState('');
-    const [quantity, setQuantity] = useState('');
 
     // フォーム送信時に実行
     const handleSubmit = (e) => {
         // デフォルトのフォーム送信をキャンセル
         e.preventDefault();
-        const newFood = { name, expiration_date, quantity };
+        const newFood = { name, expiration_date};
         onAddFood(newFood);
         // フォーム送信後に3つの入力欄を空にする
         setName('');
         setExpirationDate('');
-        setQuantity('');
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="食材名を入力せよ" required />
             <input type="date" value={expiration_date} onChange={(e) => setExpirationDate(e.target.value)} placeholder="食材の期限を入力せよ" required />
-            <input type="number" value={quantity} min="1" onChange={(e) => setQuantity(Number(e.target.value))} placeholder="食材の数量を入力せよ" required />
             <button type="submit">いただきます</button>
         </form>
     );

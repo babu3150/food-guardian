@@ -50,7 +50,7 @@ function HomePage({ onLogout }) {
     };
 
     return (
-        <div>
+        <div className="home-page">
             <h2>食材の番人</h2>
             <button onClick={onLogout}>冷蔵庫の扉を閉める</button>
             <hr />

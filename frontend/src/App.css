@@ -1,11 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #808080;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   height: 100vh;
 }
 
@@ -54,6 +50,7 @@ button.delete {
   gap: 50px;
   width: 100%;
   min-height: 100vh;
+  background-color: #808080;
 }
 
 .login-form-area {
@@ -63,6 +60,15 @@ button.delete {
 .food-guardian-image {
   width: 400px;
   height: auto;
+}
+
+.home-page {
+  min-height: 100vh;
+  background-image: url('./images/food-wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .food-item {

@@ -7,7 +7,7 @@ function FoodItem({ food, onDelete }) {
             <h3>{food.name}</h3>
             <p>{food.expiration_date}</p>
             <p>{food.quantity}</p>
-            <button className="delete" onClick={onDelete}>削除</button>
+            <button className="delete" onClick={onDelete}>ごちそうさま</button>
         </div>
     );
 }

@@ -52,12 +52,12 @@ function HomePage({ onLogout }) {
     return (
         <div>
             <h2>食材の番人</h2>
-            <button onClick={onLogout}>ログアウト</button>
+            <button onClick={onLogout}>冷蔵庫の扉を閉める</button>
             <hr />
-            <h3>食材の追加</h3>
+            <h3>食材の護衛を依頼</h3>
             <FoodForm onAddFood={handleAddFood} />
             <hr />
-            <h3>食材の一覧リスト</h3>
+            <h3>護衛中の食材</h3>
             <FoodList foods={foods} onDeleteFood={handleDeleteFood} />
         </div>
     );

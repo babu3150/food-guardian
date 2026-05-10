@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #808080;
   margin: 0;
   padding: 0;
   display: flex;
@@ -45,6 +45,24 @@ button.delete {
   background-color: #d9534f;
   margin-left: 10px;
   padding: 5px 10px;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-form-area {
+  width: 400px;
+}
+
+.food-guardian-image {
+  width: 400px;
+  height: auto;
 }
 
 .food-item {

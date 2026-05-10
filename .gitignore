@@ -1,0 +1,5 @@
+# build
+backend/public
+
+# database
+backend/db.sqlite3

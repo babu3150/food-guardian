@@ -21,7 +21,7 @@ function LoginForm( { onLogin } ) {
         if (response.ok) {
             onLogin();
         } else {
-            setError('入力内容に誤りがあるため、扉を開くことはできぬ');
+            setError('入力内容に誤りがあるゆえ、扉を開くことはできぬ');
         }
     };
 

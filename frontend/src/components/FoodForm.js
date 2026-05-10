@@ -22,7 +22,7 @@ function FoodForm({ onAddFood }) {
         <form onSubmit={handleSubmit}>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="食材" required />
             <input type="date" value={expiration_date} onChange={(e) => setExpirationDate(e.target.value)} placeholder="期限" required />
-            <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="数量" required />
+            <input type="number" value={quantity} min="1" onChange={(e) => setQuantity(Number(e.target.value))} placeholder="数量" required />
             <button type="submit">食材の追加</button>
         </form>
     );

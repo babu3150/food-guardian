@@ -29,7 +29,7 @@ function LoginForm( { onLogin } ) {
         <form onSubmit={handleSubmit}>
             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="扉を開く者" required />
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="扉を開く暗号" required />
-            <button type="submit">冷蔵庫の扉を開く</button>
+            <button type="submit" className="login">冷蔵庫の扉を開く</button>
             {error && <p>{error}</p>}
         </form>
     );

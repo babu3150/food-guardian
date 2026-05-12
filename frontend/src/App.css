@@ -37,7 +37,7 @@ button:hover {
   background-color: #4cae4c;
 }
 
-button.logout {
+button.login {
   background-color: #22c55e;
   font-weight: bold;
   padding: 10px 18px;

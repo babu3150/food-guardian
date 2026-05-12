@@ -52,7 +52,7 @@ function HomePage({ onLogout }) {
     return (
         <div className="home-page">
             <h2>食材の番人</h2>
-            <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
+            <button onClick={onLogout}>冷蔵庫の扉を閉める</button>
             <hr />
             <h3>食材の護衛を依頼</h3>
             <FoodForm onAddFood={handleAddFood} />

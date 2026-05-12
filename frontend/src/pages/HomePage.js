@@ -59,7 +59,6 @@ function HomePage({ onLogout }) {
                 <h3>食材の護衛を依頼</h3>
                 <FoodForm onAddFood={handleAddFood} />
             </div>
-            <hr />
             <h3>護衛中の食材</h3>
             <FoodList foods={foods} onDeleteFood={handleDeleteFood} />
         </div>

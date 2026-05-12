@@ -4,8 +4,8 @@ import React from "react";
 function FoodItem({ food, onDelete }) {
     return (
         <div className="food-item">
-            <h3>{food.name}</h3>
-            <p>{food.expiration_date}</p>
+            <h3 className="food-name">{food.name}</h3>
+            <p className="food-expiration">期限: {food.expiration_date}</p>
             <button className="delete" onClick={onDelete}>ごちそうさま</button>
         </div>
     );

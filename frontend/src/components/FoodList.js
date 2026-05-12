@@ -3,7 +3,7 @@ import FoodItem from './FoodItem';
 
 function FoodList({ foods, onDeleteFood }) {
     return (
-        <div>
+        <div className="food-list">
             {foods.map((food) => (
                 <FoodItem key={food.id} food={food} onDelete={() => onDeleteFood(food.id)} />
             ))}

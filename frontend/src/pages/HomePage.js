@@ -55,9 +55,10 @@ function HomePage({ onLogout }) {
                 <h2 className="header-title">食材の番人</h2>
                 <button onClick={onLogout}>冷蔵庫の扉を閉める</button>
             </header>
-            <hr />
-            <h3>食材の護衛を依頼</h3>
-            <FoodForm onAddFood={handleAddFood} />
+            <div className="food-form">
+                <h3>食材の護衛を依頼</h3>
+                <FoodForm onAddFood={handleAddFood} />
+            </div>
             <hr />
             <h3>護衛中の食材</h3>
             <FoodList foods={foods} onDeleteFood={handleDeleteFood} />

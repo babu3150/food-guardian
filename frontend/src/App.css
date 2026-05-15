@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -64,13 +68,14 @@ button.delete:hover {
   justify-content: center;
   align-items: center;
   gap: 80px;
+  width: 100%;
   min-height: 100vh;
   padding: 24px;
   background-color: #808080;
 }
 
 .login-form-area {
-  width: 400px;
+  width: 100%;
   max-width: 420px;
 }
 
@@ -159,5 +164,9 @@ button.delete:hover {
   .login-page {
     flex-direction: column;
     text-align: center;
+  }
+
+  .food-guardian-image {
+    width: 240px;
   }
 }

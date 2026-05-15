@@ -63,14 +63,21 @@ button.delete:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  width: 100%;
+  gap: 80px;
   min-height: 100vh;
+  padding: 24px;
   background-color: #808080;
 }
 
 .login-form-area {
   width: 400px;
+  max-width: 420px;
+}
+
+.login-image-area {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
 }
 
 .food-guardian-image {
@@ -145,4 +152,12 @@ button.delete:hover {
 .food-expiration {
   margin: 0;
   color: #666;
+}
+
+/* スマホ幅用 */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+    text-align: center;
+  }
 }

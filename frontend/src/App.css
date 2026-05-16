@@ -170,6 +170,8 @@ button.delete:hover {
   );
   border: 2px solid #93c5fd;
   box-shadow: 0 4px 12px rgba(147, 197, 253, 0.4);
+  position: relative;
+  overflow: hidden;
 }
 
 .food-name {
@@ -180,6 +182,20 @@ button.delete:hover {
 .food-expiration {
   margin: 0;
   font-weight: bold;
+}
+
+.food-frozen {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform:
+    translate(-50%, -50%)
+    rotate(-15deg);
+  font-size: 64px;
+  font-weight: bold;
+  color: rgba(147,197,253,0.3);
+  pointer-events: none;
+  user-select: none;
 }
 
 /* 期限（期限切れ） */

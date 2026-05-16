@@ -27,8 +27,8 @@ function LoginForm( { onLogin } ) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} onInvalid={(e) => {e.target.setCustomValidity('そなたの名を入力せよ')}} placeholder="扉を開く者" required />
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}  onInvalid={(e) => {e.target.setCustomValidity('そなたの暗号を入力せよ')} } placeholder="扉を開く暗号" required />
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} onInvalid={(e) => {e.target.setCustomValidity('そなたの名を入力せよ')}} onInput={(e) => {e.target.setCustomValidity('')}} placeholder="扉を開く者" required />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} onInvalid={(e) => {e.target.setCustomValidity('そなたの暗号を入力せよ')}} onInput={(e) => {e.target.setCustomValidity('')}} placeholder="扉を開く暗号" required />
             <button type="submit" className="login">冷蔵庫の扉を開く</button>
             {error && <p>{error}</p>}
         </form>

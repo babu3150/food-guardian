@@ -26,10 +26,13 @@ function FoodItem({ food, onDelete , onFreeze}) {
         <div className={`food-item ${food.frozen ? 'frozen' : ''}`}>
             <h3 className="food-name">{food.name}</h3>
             <p className={`food-expiration ${getExpirationClass(food.expiration_date)}`}>期限: {food.expiration_date}</p>
-            <p className="food-frozen">{food.frozen ? '冷凍中' : ''}</p>
+            {/* 冷凍中は文言を表示、こう書かないと0が画面表示される */}
+            {food.frozen === 1 && (
+                <p className="food-frozen">冷凍中</p>
+            )}
             {/* 冷凍後は冷凍ボタンを非表示 */}
             {!food.frozen && (
-                <button className="freeze" onClick={onFreeze}>カチンコチンにする</button>
+                <button className="freeze" onClick={onFreeze}>凍ってらっしゃい</button>
             )}
             <button className="delete" onClick={onDelete}>ごちそうさま</button>
         </div>

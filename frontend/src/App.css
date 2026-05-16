@@ -156,6 +156,21 @@ button.delete:hover {
 
 .food-expiration {
   margin: 0;
+  font-weight: bold;
+}
+
+/* 期限（期限切れ） */
+.food-expiration.expired {
+  color: #dc2626;
+}
+
+/* 期限（今日まで） */
+.food-expiration.today {
+  color: #ca8a04;
+}
+
+/* 期限（余裕あり） */
+.food-expiration.normal {
   color: #666;
 }
 

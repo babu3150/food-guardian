@@ -37,13 +37,15 @@ async function initDB() {
    username // ユーザー名
    name // 食材名
    expiration_date // 消費or賞味期限
+   frozen // 冷凍中かどうか
    */
   await db.exec(`
     CREATE TABLE IF NOT EXISTS foods (
       id INTEGER PRIMARY KEY,
       username TEXT,
       name TEXT NOT NULL,
-      expiration_date TEXT
+      expiration_date TEXT,
+      frozen INTEGER DEFAULT 0
     )
   `)
 }
@@ -88,5 +90,11 @@ async function deleteFood(id) {
     await db.run(`DELETE FROM foods WHERE id = ?`, [id]);
 }
 
+// 食材の冷凍
+async function freezeFood(id) {
+    const db = await dbPromise;
+    await db.run(`UPDATE foods SET frozen = ? WHERE id = ?`, [1, id]);
+}
+
 // 上記関数をモジュールとしてエクスポート
-module.exports = { createUser, authenticateUser, getFoods, addFood, deleteFood };
+module.exports = { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood };

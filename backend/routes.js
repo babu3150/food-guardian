@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-const { createUser, authenticateUser, getFoods, addFood, deleteFood } = require('./db');
+const { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood } = require('./db');
 
 // ExpressのRouter作成
 const router = express.Router();
@@ -60,6 +60,15 @@ router.delete('/foods/:id', async (req, res) => {
     }
     await deleteFood(req.params.id);
     res.status(200).send('食材をリストから削除しました！');
+});
+
+// 食材の冷凍用APIエンドポイント
+router.put('/foods/:id/freeze', async (req, res) => {
+    if (!req.session.username) {
+        return res.status(401).send('ユーザー情報を確認できませんでした。');
+    }
+    await freezeFood(req.params.id);
+    res.status(201).send('食材を冷凍しました！');
 });
 
 module.exports = router;

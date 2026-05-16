@@ -1,7 +1,7 @@
 import React from "react";
 
 // 食材の項目
-function FoodItem({ food, onDelete }) {
+function FoodItem({ food, onDelete , onFreeze}) {
 
     // 日付を判定
     function getExpirationClass(expirationDate) {
@@ -23,9 +23,14 @@ function FoodItem({ food, onDelete }) {
     }
 
     return (
-        <div className="food-item">
+        <div className={`food-item ${food.frozen ? 'frozen' : ''}`}>
             <h3 className="food-name">{food.name}</h3>
             <p className={`food-expiration ${getExpirationClass(food.expiration_date)}`}>期限: {food.expiration_date}</p>
+            <p className="food-frozen">{food.frozen ? '冷凍中' : ''}</p>
+            {/* 冷凍後は冷凍ボタンを非表示 */}
+            {!food.frozen && (
+                <button className="freeze" onClick={onFreeze}>カチンコチンにする</button>
+            )}
             <button className="delete" onClick={onDelete}>ごちそうさま</button>
         </div>
     );

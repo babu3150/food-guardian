@@ -49,6 +49,20 @@ function HomePage({ onLogout }) {
         }
     };
 
+    // 食材の冷凍
+    const handleFreezeFood = async (id) => {
+        const response = await fetch(`/api/foods/${id}/freeze`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            fetchFoods();
+        }
+    };
+
     return (
         <div className="home-page">
             <header className="header">
@@ -66,7 +80,7 @@ function HomePage({ onLogout }) {
                     <h2>護衛中の食材</h2>
                 </div>
             </div>
-            <FoodList foods={foods} onDeleteFood={handleDeleteFood} />
+            <FoodList foods={foods} onDeleteFood={handleDeleteFood} onFreezeFood={handleFreezeFood} />
         </div>
     );
 }

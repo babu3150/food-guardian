@@ -75,7 +75,7 @@ async function authenticateUser(username, password) {
 // 食材の一覧取得（期限が近いものから表示するように）
 async function getFoods(username) {
     const db = await dbPromise;
-    return await db.all(`SELECT * FROM foods WHERE username = ? ORDER BY expiration_date ASC`, [username]);
+    return await db.all(`SELECT * FROM foods WHERE username = ? ORDER BY frozen ASC, expiration_date ASC`, [username]);
 }
 
 // 食材の追加

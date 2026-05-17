@@ -1,9 +1,14 @@
 const express = require('express');
 const session = require('express-session');
+const OpenAI = require('openai');
 const { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood } = require('./db');
 
 // ExpressのRouter作成
 const router = express.Router();
+
+const client = new OpenAI({
+    apiKey: process.env.OpenAI_API_KEY
+});
 
 // セッション管理
 router.use(session({
@@ -69,6 +74,34 @@ router.put('/foods/:id/freeze', async (req, res) => {
     }
     await freezeFood(req.params.id);
     res.status(201).send('食材を冷凍しました！');
+});
+
+// 食材の鮮度のAIへの問い合わせ用APIエンドポイント
+router.post('/freshness', async (req, res) => {
+    try {
+        const food = req.body.food;
+        const response = await client.chat.completions.create({
+            // コスト削減のため、あえて古いモデルを使用
+            model: 'gpt-4o-mini',
+            messages: [
+                {
+                    role: 'user',
+                    content: `
+                    鮮度の良い${food}の見分け方を50文字以内で教えて
+                    `
+                }
+            ]
+        });
+
+        res.json({
+            answer: response.choices[0].message.content
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            error: 'AIへの問い合わせに失敗しました'
+        });
+    }
 });
 
 module.exports = router;

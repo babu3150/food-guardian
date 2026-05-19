@@ -29,30 +29,32 @@ input {
 }
 
 button {
-  padding: 10px 15px;
-  background-color: #5cb85c;
+  padding: 10px 16px;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #4cae4c;
+  font-weight: bold;
 }
 
 button.login {
   background-color: #22c55e;
-  font-weight: bold;
-  padding: 10px 18px;
-  border-radius: 6px;
+}
+
+button.login:hover {
+  background-color: #4cae4c;
+}
+
+button.logout {
+  background-color: #4b5563;  
+}
+
+button.logout:hover {
+  background-color: #374151;
 }
 
 button.freeze {
   align-self: flex-end;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
   background-color: #60a5fa;
   cursor: pointer;
   transition: 0.2s;
@@ -65,9 +67,6 @@ button.freeze:hover {
 
 button.delete {
   align-self: flex-end;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
   background-color: #dc2626;
   cursor: pointer;
   transition: 0.2s;
@@ -76,6 +75,14 @@ button.delete {
 button.delete:hover {
   background-color: #b91c1c;
   transform: translateY(-1px);
+}
+
+button.ai {
+  background-color: #5b8def;
+}
+
+button.ai:hover {
+  background-color: #3f74db;
 }
 
 .login-page {
@@ -122,6 +129,11 @@ button.delete:hover {
   padding: 0 24px;
   background-color: #2f5d50;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
 }
 
 .food-form {

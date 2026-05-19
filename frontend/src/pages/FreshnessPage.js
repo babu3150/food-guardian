@@ -21,8 +21,11 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
         <div className="freshness-page">
             <header className="header">
                 <h2 className="header-title">食材の番人</h2>
-                <button onClick={onMoveFreshness}>AIに問い合わせる</button>
-                <button onClick={onLogout}>冷蔵庫の扉を閉める</button>
+
+                <div className="header-buttons">
+                    <button className="ai" onClick={onMoveFreshness}>AI食材相談室</button>
+                    <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
+                </div>
             </header>
             <div>
                 <h2>AI鮮度チェック</h2>

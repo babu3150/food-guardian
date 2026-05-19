@@ -42,7 +42,7 @@ function App() {
         )}
 
         {page === 'freshness' && (
-          <FreshnessPage />
+          <FreshnessPage onLogout={handleLogout} onMoveFreshness={() => setPage('freshness')} />
         )}
         </>
       )}

@@ -225,6 +225,55 @@ button.ai:hover {
   color: #666;
 }
 
+.freshness-page {
+  background: 
+    linear-gradient(
+      rgba(20, 40, 30, 0.75),
+      rgba(20, 40, 30, 0.75)
+    ),
+    url('./images/food-wallpaper.png');
+
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.freshness-content {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.freshness-form-area {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.freshness-image-area {
+  width: 420px;
+  display: flex;
+  justify-content: center;
+}
+
+.freshness-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ai-answer {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 6px solid #2f6655;
+  line-height: 1.8;
+}
+
 /* スマホ幅用 */
 @media (max-width: 900px) {
   .login-page {

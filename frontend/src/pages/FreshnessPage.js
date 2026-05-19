@@ -27,11 +27,26 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                     <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
                 </div>
             </header>
-            <div>
-                <h2>AI鮮度チェック</h2>
-                <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" />
-                <button onClick={handleAsk}>問い合わせる</button>
-                <p>{answer}</p>
+            <div className="freshness-content">
+                {/* 左部分 */}
+                <div className="freshness-form-area">
+                    <div className="section-title">
+                        <h2>AI番人に問い合わせる</h2>
+                    </div>
+
+                    <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" />
+                    <button onClick={handleAsk}>問い合わせる</button>
+                    {answer && (
+                        <div className="ai-answer">
+                            <p>{answer}</p>
+                        </div>    
+                    )}
+                </div>
+
+                {/* 右部分 */}
+                <div className="freshness-image-area">
+                    <img src="/guardian-operator.png" alt="AI番人" className="freshness-image" />
+                </div>
             </div>
         </div>
     );

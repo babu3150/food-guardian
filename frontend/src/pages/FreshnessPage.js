@@ -2,9 +2,13 @@ import React, {useState} from "react";
 
 function FreshnessPage({ onLogout, onMoveFreshness }) {
     const [food, setFood] = useState('');
+    const [loading, setLoading] = useState(false);
     const [answer, setAnswer] = useState('');
 
     const handleAsk = async () => {
+
+        setLoading(true);
+
         const response = await fetch('/api/freshness', {
             method: 'POST',
             headers: {
@@ -15,6 +19,8 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
 
         const data = await response.json();
         setAnswer(data.answer);
+
+        setLoading(false);
     };
 
     return (
@@ -36,11 +42,17 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
 
                     <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" />
                     <button onClick={handleAsk}>問い合わせる</button>
-                    {answer && (
-                        <div className="ai-answer">
-                            <p>{answer}</p>
-                        </div>    
-                    )}
+                        <div className="ai-answer-area">
+                            {loading ? (
+                                <div className="loading-animation">
+                                    <div className="loading-dot"></div>
+                                    <div className="loading-dot"></div>
+                                    <div className="loading-dot"></div>
+                                </div>
+                            ):(
+                                <p>{answer || 'AI番人がここに回答する'}</p>
+                            )}
+                        </div>
                 </div>
 
                 {/* 右部分 */}

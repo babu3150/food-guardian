@@ -53,6 +53,17 @@ button.logout:hover {
   background-color: #374151;
 }
 
+button.add {
+  background-color: #f4d35e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.add:hover {
+  background-color: #e9c64b;
+  transform: translateY(-1px);
+}
+
 button.freeze {
   align-self: flex-end;
   background-color: #60a5fa;
@@ -83,6 +94,27 @@ button.ai {
 
 button.ai:hover {
   background-color: #3f74db;
+}
+
+button.ask {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2f6655, #4f8cff);
+  font-size: 18px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 6px 18px rgba(79, 140, 255, 0.35);
+}
+
+button.ask:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 140, 255, 0.45);
+  opacity: 0.96;
+}
+
+button.ask:active {
+  transform: scale(0.98);
 }
 
 .login-page {
@@ -263,31 +295,6 @@ button.ai:hover {
   max-width: 400px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.ask-button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 16px 24px;
-  border: none;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #2f6655, #4f8cff);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-  box-shadow: 0 6px 18px rgba(79, 140, 255, 0.35);
-}
-
-.ask-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(79, 140, 255, 0.45);
-  opacity: 0.96;
-}
-
-.ask-button:active {
-  transform: scale(0.98);
 }
 
 .ai-answer-area {

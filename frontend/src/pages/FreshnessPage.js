@@ -41,7 +41,7 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                     </div>
 
                     <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" required/>
-                    <button onClick={handleAsk} className="ask-button">問い合わせる</button>
+                    <button onClick={handleAsk} className="ask">問い合わせる</button>
                         <div className="ai-answer-area">
                             {loading ? (
                                 <div className="loading-animation">
@@ -50,7 +50,7 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                                     <div className="loading-dot"></div>
                                 </div>
                             ):(
-                                <p>{answer || 'AI番人がここに回答する'}</p>
+                                <p>{answer || '遠慮せず聞きたまえよ'}</p>
                             )}
                         </div>
                 </div>

@@ -20,7 +20,7 @@ function FoodForm({ onAddFood }) {
         <form onSubmit={handleSubmit}>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)}  onInvalid={(e) => {e.target.setCustomValidity('食材の名が入力されておらぬぞよ')}} onInput={(e) => {e.target.setCustomValidity('')}} placeholder="食材名を入力せよ" required />
             <input type="date" value={expiration_date} onChange={(e) => setExpirationDate(e.target.value)} onInvalid={(e) => {e.target.setCustomValidity('食材の期限が入力されておらぬぞよ')}} onInput={(e) => {e.target.setCustomValidity('')}} placeholder="食材の期限を入力せよ" required />
-            <button type="submit">いただきます</button>
+            <button type="submit" className="add">いただきます</button>
         </form>
     );
 }

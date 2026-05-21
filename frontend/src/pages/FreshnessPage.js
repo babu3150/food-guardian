@@ -37,11 +37,11 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                 {/* 左部分 */}
                 <div className="freshness-form-area">
                     <div className="section-title">
-                        <h2>AI番人に問い合わせる</h2>
+                        <h2>AI食材相談室</h2>
                     </div>
 
-                    <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" />
-                    <button onClick={handleAsk}>問い合わせる</button>
+                    <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" required/>
+                    <button onClick={handleAsk} className="ask-button">問い合わせる</button>
                         <div className="ai-answer-area">
                             {loading ? (
                                 <div className="loading-animation">

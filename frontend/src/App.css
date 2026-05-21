@@ -265,6 +265,31 @@ button.ai:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.ask-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2f6655, #4f8cff);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 6px 18px rgba(79, 140, 255, 0.35);
+}
+
+.ask-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 140, 255, 0.45);
+  opacity: 0.96;
+}
+
+.ask-button:active {
+  transform: scale(0.98);
+}
+
 .ai-answer-area {
   margin-top: 25px;
   min-height: 180px;

@@ -284,6 +284,43 @@ button.ask:active {
   border-radius: 20px;
 }
 
+.category-tags {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.active-tag {
+  background: linear-gradient(135deg, #4facfe, #43e97b);
+  color: white;
+  transform: scale(1.05);
+}
+
+.category-tags button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid #d0d7de;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    transform 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
+}
+
+.category-tags button:hover {
+  background-color: #f3f7f5;
+  border-color: #6bbf7a;
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
 .freshness-image-area {
   width: 420px;
   display: flex;

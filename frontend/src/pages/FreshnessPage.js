@@ -42,11 +42,11 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                         <h2>AI食材相談室</h2>
                     </div>
 
-                    <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                        <option value="freshness">鮮度</option>
-                        <option value="nutrition">栄養</option>
-                        <option value="recipe">レシピ</option>
-                    </select>
+                    <div className="category-tags">
+                        <button className={category === 'freshness' ? 'active-tag' : '' } onClick={() => setCategory('freshness')}>🥬鮮度</button>
+                        <button className={category === 'nutrition' ? 'active-tag' : '' } onClick={() => setCategory('nutrition')}>💪栄養</button>
+                        <button className={category === 'recipe' ? 'active-tag' : '' } onClick={() => setCategory('recipe')}>🍳レシピ</button>
+                    </div>
 
                     <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" required/>
                     <button onClick={handleAsk} className="ask">問い合わせる</button>

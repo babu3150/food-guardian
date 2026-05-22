@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 function FreshnessPage({ onLogout, onMoveFreshness }) {
     const [food, setFood] = useState('');
+    const [category, setCategory] = useState('freshness');
     const [loading, setLoading] = useState(false);
     const [answer, setAnswer] = useState('');
 
@@ -14,7 +15,7 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({food})
+            body: JSON.stringify({food, category})
         });
 
         const data = await response.json();
@@ -39,6 +40,12 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                     <div className="section-title">
                         <h2>AI食材相談室</h2>
                     </div>
+
+                    <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <option value="freshness">鮮度</option>
+                        <option value="nutrition">栄養</option>
+                        <option value="recipe">レシピ</option>
+                    </select>
 
                     <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" required/>
                     <button onClick={handleAsk} className="ask">問い合わせる</button>

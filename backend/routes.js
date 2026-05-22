@@ -80,15 +80,33 @@ router.put('/foods/:id/freeze', async (req, res) => {
 router.post('/freshness', async (req, res) => {
     try {
         const food = req.body.food;
+        const category = req.body.category;
+
+        let prompt = '';
+
+        if (category === 'freshness') {
+            prompt = `鮮度の良い${food}の見分け方を50文字以内で教えて`;
+        }
+
+        if (category === 'nutrition') {
+            prompt = `${food}の主な栄養、効率よく栄養を摂取できる食材の組み合わせ、栄養価が高くなる調理法、栄養価を高く食べられる時間帯を200文字で教えて`;
+        }
+
+        if (category === 'recipe') {
+            prompt = `${food}を使った簡単なレシピと手の込んだレシピを教えて`
+        }
+
         const response = await client.chat.completions.create({
             // コスト削減のため、あえて古いモデルを使用
             model: 'gpt-4o-mini',
             messages: [
                 {
+                    role: 'system',
+                    content: '回答は簡潔にしてください'
+                },
+                {
                     role: 'user',
-                    content: `
-                    鮮度の良い${food}の見分け方を50文字以内で教えて
-                    `
+                    content: prompt
                 }
             ]
         });

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
+const path = require("path");
 
 // ルートハンドラ用モジュールのインポート
 const routes = require('./routes');
@@ -20,9 +21,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// public以下の静的ファイルを使用
-app.use(express.static('public'));
-
+// frontend/build以下の静的ファイルを使用
+app.use(express.static(
+    path.join(__dirname, "../frontend/build")
+));
 
 // '/api'パスに対するルートハンドラの設定
 app.use('/api', routes);

@@ -20,7 +20,8 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
 
         const data = await response.json();
         setAnswer(data.answer);
-
+        // フォーム送信後に入力欄を空にし、ロードアイコンを非表示にする
+        setFood('');
         setLoading(false);
     };
 

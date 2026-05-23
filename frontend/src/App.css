@@ -96,6 +96,14 @@ button.ai:hover {
   background-color: #3f74db;
 }
 
+button.home {
+  background-color: #f4a261;
+}
+
+button.home:hover {
+  background-color: #e76f51;
+}
+
 button.ask {
   width: 100%;
   margin-top: 20px;

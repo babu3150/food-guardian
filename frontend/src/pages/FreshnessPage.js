@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function FreshnessPage({ onLogout, onMoveFreshness }) {
+function FreshnessPage({ onLogout, onMoveHome }) {
     const [food, setFood] = useState('');
     const [category, setCategory] = useState('freshness');
     const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ function FreshnessPage({ onLogout, onMoveFreshness }) {
                 <h2 className="header-title">食材の番人</h2>
 
                 <div className="header-buttons">
-                    <button className="ai" onClick={onMoveFreshness}>AI食材相談室</button>
+                    <button className="home" onClick={onMoveHome}>冷蔵庫の中に戻る</button>
                     <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
                 </div>
             </header>

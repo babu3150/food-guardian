@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-function FreshnessPage({ onLogout, onMoveHome }) {
+function FoodAdvisorPage({ onLogout, onMoveHome }) {
     const [food, setFood] = useState('');
-    const [category, setCategory] = useState('freshness');
+    const [category, setCategory] = useState('food-advisor');
     const [loading, setLoading] = useState(false);
     const [answer, setAnswer] = useState('');
 
@@ -10,7 +10,7 @@ function FreshnessPage({ onLogout, onMoveHome }) {
 
         setLoading(true);
 
-        const response = await fetch('/api/freshness', {
+        const response = await fetch('/api/food-advisor', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ function FreshnessPage({ onLogout, onMoveHome }) {
     };
 
     return (
-        <div className="freshness-page">
+        <div className="food-advisor-page">
             <header className="header">
                 <h2 className="header-title">食材の番人</h2>
 
@@ -35,9 +35,9 @@ function FreshnessPage({ onLogout, onMoveHome }) {
                     <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
                 </div>
             </header>
-            <div className="freshness-content">
+            <div className="food-advisor-content">
                 {/* 左部分 */}
-                <div className="freshness-form-area">
+                <div className="food-advisor-form-area">
                     <div className="section-title">
                         <h2>AI食材相談室</h2>
                     </div>
@@ -64,12 +64,12 @@ function FreshnessPage({ onLogout, onMoveHome }) {
                 </div>
 
                 {/* 右部分 */}
-                <div className="freshness-image-area">
-                    <img src="/guardian-operator.png" alt="AI番人" className="freshness-image" />
+                <div className="food-advisor-image-area">
+                    <img src="/guardian-operator.png" alt="AI番人" className="food-advisor-image" />
                 </div>
             </div>
         </div>
     );
 }
 
-export default FreshnessPage;
+export default FoodAdvisorPage;

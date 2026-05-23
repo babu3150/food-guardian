@@ -265,7 +265,7 @@ button.ask:active {
   color: #666;
 }
 
-.freshness-page {
+.food-advisor-page {
   background: 
     linear-gradient(
       rgba(20, 40, 30, 0.75),
@@ -278,14 +278,14 @@ button.ask:active {
     min-height: 100vh;
 }
 
-.freshness-content {
+.food-advisor-content {
   display: flex;
   gap: 40px;
   padding: 30px;
   align-items: flex-start;
 }
 
-.freshness-form-area {
+.food-advisor-form-area {
   flex: 1;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 25px;
@@ -329,13 +329,13 @@ button.ask:active {
     0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.freshness-image-area {
+.food-advisor-image-area {
   width: 420px;
   display: flex;
   justify-content: center;
 }
 
-.freshness-image {
+.food-advisor-image {
   width: 100%;
   max-width: 400px;
   border-radius: 20px;

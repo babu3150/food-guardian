@@ -4,8 +4,8 @@ import './App.css';
 import LoginPage from './pages/LoginPage';
 // ホームページ（ホーム画面）用コンポーネント
 import HomePage from './pages/HomePage';
-// 鮮度のAI問い合わせページ用コンポーネント
-import FreshnessPage from './pages/FreshnessPage';
+// AI問い合わせページ（AI食材相談室）用コンポーネント
+import FoodAdvisorPage from './pages/FoodAdvisorPage';
 
 function App() {
   // ログイン状態の管理用ステート（isLoggedInの真偽値で管理）
@@ -38,11 +38,11 @@ function App() {
       ) : (
         <>
         {page === 'home' && (
-          <HomePage onLogout={handleLogout} onMoveFreshness={() => setPage('freshness')}/>
+          <HomePage onLogout={handleLogout} onMoveFoodAdvisor={() => setPage('food-advisor')}/>
         )}
 
-        {page === 'freshness' && (
-          <FreshnessPage onLogout={handleLogout} onMoveHome={() => setPage('home')} />
+        {page === 'food-advisor' && (
+          <FoodAdvisorPage onLogout={handleLogout} onMoveHome={() => setPage('home')} />
         )}
         </>
       )}

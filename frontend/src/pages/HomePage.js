@@ -4,7 +4,7 @@ import FoodList from '../components/FoodList';
 // 食材追加フォームのコンポーネント
 import FoodForm from '../components/FoodForm';
 
-function HomePage({ onLogout, onMoveFreshness }) {
+function HomePage({ onLogout, onMoveFoodAdvisor }) {
     // 食材管理用ステート
     const [foods, setFoods] = useState([]);
 
@@ -69,7 +69,7 @@ function HomePage({ onLogout, onMoveFreshness }) {
                 <h2 className="header-title">食材の番人</h2>
                 
                 <div className="header-buttons">
-                    <button className="ai" onClick={onMoveFreshness}>AI食材相談室</button>
+                    <button className="ai" onClick={onMoveFoodAdvisor}>AI食材相談室</button>
                     <button className="logout" onClick={onLogout}>冷蔵庫の扉を閉める</button>
                 </div>
             </header>

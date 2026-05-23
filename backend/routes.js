@@ -76,8 +76,8 @@ router.put('/foods/:id/freeze', async (req, res) => {
     res.status(201).send('食材を冷凍しました！');
 });
 
-// 食材の鮮度のAIへの問い合わせ用APIエンドポイント
-router.post('/freshness', async (req, res) => {
+// AI食材相談室用APIエンドポイント
+router.post('/food-advisor', async (req, res) => {
     try {
         const food = req.body.food;
         const category = req.body.category;

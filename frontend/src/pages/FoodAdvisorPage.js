@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function FoodAdvisorPage({ onLogout, onMoveHome }) {
     const [food, setFood] = useState('');
-    const [category, setCategory] = useState('food-advisor');
+    const [category, setCategory] = useState('freshness');
     const [loading, setLoading] = useState(false);
     const [answer, setAnswer] = useState('');
 

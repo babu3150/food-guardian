@@ -92,8 +92,12 @@ router.post('/food-advisor', async (req, res) => {
             prompt = `${food}の主な栄養、効率よく栄養を摂取できる食材の組み合わせ、栄養価が高くなる調理法、栄養価を高く食べられる時間帯を200文字で教えて`;
         }
 
-        if (category === 'recipe') {
-            prompt = `${food}を使った簡単なレシピと手の込んだレシピを教えて`
+        if (category === 'easy-recipe') {
+            prompt = `${food}を使った簡単なレシピを教えて`;
+        }
+
+        if (category === 'difficult-recipe') {
+            prompt = `${food}を使った手の込んだレシピを教えて`;
         }
 
         const response = await client.chat.completions.create({

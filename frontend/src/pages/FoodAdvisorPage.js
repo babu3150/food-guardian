@@ -45,7 +45,8 @@ function FoodAdvisorPage({ onLogout, onMoveHome }) {
                     <div className="category-tags">
                         <button className={category === 'freshness' ? 'active-tag' : '' } onClick={() => setCategory('freshness')}>🥬鮮度</button>
                         <button className={category === 'nutrition' ? 'active-tag' : '' } onClick={() => setCategory('nutrition')}>💪栄養</button>
-                        <button className={category === 'recipe' ? 'active-tag' : '' } onClick={() => setCategory('recipe')}>🍳レシピ</button>
+                        <button className={category === 'easy-recipe' ? 'active-tag' : '' } onClick={() => setCategory('easy-recipe')}>🍳簡単なレシピ</button>
+                        <button className={category === 'difficult-recipe' ? 'active-tag' : '' } onClick={() => setCategory('difficult-recipe')}>👩‍🍳手の込んだレシピ</button>
                     </div>
 
                     <input type="text" value={food} onChange={(e) => setFood(e.target.value)} placeholder="食材名を入力せよ" required/>

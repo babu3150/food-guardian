@@ -100,6 +100,10 @@ router.post('/food-advisor', async (req, res) => {
             prompt = `${food}を使った手の込んだレシピを教えて`;
         }
 
+        if (category === 'cold-recipe') {
+            prompt = `${food}を使った風邪に効くレシピを教えて`
+        }
+
         const response = await client.chat.completions.create({
             // コスト削減のため、あえて古いモデルを使用
             model: 'gpt-4o-mini',

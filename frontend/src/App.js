@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 // ログインページ（ログイン画面）用コンポーネント
 import LoginPage from './pages/LoginPage';
+// ユーザー登録ページ（ユーザー登録画面）用コンポーネント
+import SignupPage from './pages/SignupPage';
 // ホームページ（ホーム画面）用コンポーネント
 import HomePage from './pages/HomePage';
 // AI問い合わせページ（AI食材相談室）用コンポーネント
@@ -12,7 +14,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // 現在ページの管理用ステート
-  const [page, setPage] = useState('home');
+  const [page, setPage] = useState('login');
 
   // ログイン
   const handleLogin = () => {
@@ -30,15 +32,29 @@ function App() {
     }
   };
 
+  // ユーザー登録
+  const handleSignup = () => {
+    setPage('login');
+  }
+
   return (
     <div>
       {/* ログアウト中はログイン画面、ログイン中はホーム画面を表示 */}
       { !isLoggedIn ? (
-        <LoginPage onLogin={handleLogin} />
+        <>
+        {page === 'login' && (
+          <LoginPage onLogin={handleLogin} onMoveSignup={() => setPage('signup')} />
+        )}
+
+        {page === 'signup' && (
+          <SignupPage onSignup={handleSignup} />
+        )}
+        </>
+        
       ) : (
         <>
         {page === 'home' && (
-          <HomePage onLogout={handleLogout} onMoveFoodAdvisor={() => setPage('food-advisor')}/>
+          <HomePage onLogout={handleLogout} onMoveFoodAdvisor={() => setPage('food-advisor')} />
         )}
 
         {page === 'food-advisor' && (

@@ -43,8 +43,8 @@ function FoodAdvisorPage({ onLogout, onMoveHome }) {
                     </div>
 
                     <div className="category-tags">
-                        <button className={category === 'freshness' ? 'active-tag' : '' } onClick={() => setCategory('freshness')}>🥬鮮度</button>
-                        <button className={category === 'nutrition' ? 'active-tag' : '' } onClick={() => setCategory('nutrition')}>💪栄養</button>
+                        <button className={category === 'freshness' ? 'active-tag' : '' } onClick={() => setCategory('freshness')}>🥬鮮度の見分け方</button>
+                        <button className={category === 'nutrition' ? 'active-tag' : '' } onClick={() => setCategory('nutrition')}>💪栄養豆知識</button>
                         <button className={category === 'easy-recipe' ? 'active-tag' : '' } onClick={() => setCategory('easy-recipe')}>🍳簡単なレシピ</button>
                         <button className={category === 'difficult-recipe' ? 'active-tag' : '' } onClick={() => setCategory('difficult-recipe')}>👩‍🍳手の込んだレシピ</button>
                         <button className={category === 'cold-recipe' ? 'active-tag' : '' } onClick={() => setCategory('cold-recipe')}>🤧風邪に効くレシピ</button>
@@ -60,7 +60,7 @@ function FoodAdvisorPage({ onLogout, onMoveHome }) {
                                     <div className="loading-dot"></div>
                                 </div>
                             ):(
-                                <p>{answer || '遠慮せず聞きたまえよ'}</p>
+                                <p>{answer || '私はAI番人です。カテゴリーを1つ選択し、食材名を入力して質問してください。それなりの回答をいたしますよ。'}</p>
                             )}
                         </div>
                 </div>

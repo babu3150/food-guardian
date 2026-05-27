@@ -407,7 +407,7 @@ button.ask:active {
 
 /* スマホ幅用 */
 @media (max-width: 900px) {
-  .login-page {
+  .login-page, .signup-page {
     flex-direction: column;
     text-align: center;
   }

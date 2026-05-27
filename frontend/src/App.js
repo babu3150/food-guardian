@@ -29,6 +29,7 @@ function App() {
     });
     if (response.ok) {
       setIsLoggedIn(false);
+      setPage('login');
     }
   };
 

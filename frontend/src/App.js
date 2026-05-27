@@ -49,7 +49,7 @@ function App() {
         )}
 
         {page === 'signup' && (
-          <SignupPage onSignup={handleSignup} />
+          <SignupPage onSignup={handleSignup} onMoveLogin={() => setPage('login')} />
         )}
         </>
         

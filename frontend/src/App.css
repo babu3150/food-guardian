@@ -149,7 +149,7 @@ button.ask:active {
   max-width: 420px;
 }
 
-.signup-link-button {
+.login-link-button, .signup-link-button {
   background: none;
   border: none;
   color: #d9b36c;

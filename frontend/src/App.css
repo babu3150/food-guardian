@@ -53,6 +53,14 @@ button.logout:hover {
   background-color: #374151;
 }
 
+button.signup {
+  background-color: #9b7de2;
+}
+
+button.signup:hover {
+  background-color: #8868d6;
+}
+
 button.add {
   background-color: #f4d35e;
   cursor: pointer;

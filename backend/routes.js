@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const OpenAI = require('openai');
-const { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood } = require('./db');
+const { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood, getMemo, updateMemo } = require('./db');
 
 // ExpressのRouter作成
 const router = express.Router();
@@ -87,6 +87,23 @@ router.put('/foods/:id/freeze', async (req, res) => {
     await freezeFood(req.params.id);
     res.status(201).send('食材を冷凍しました！');
 });
+
+// メモ取得用APIエンドポイント
+router.get('/memo', async(req, res) => {
+    const username = req.session.username;
+    const memo = await getMemo(username);
+    res.json({
+        memo
+    });
+});
+
+// メモ登録用APIエンドポイント
+router.put('/memo', async(req, res) => {
+    const username = req.session.username;
+    const { memo } = req.body;
+    await updateMemo(username, memo);
+    res.status(200).send('メモを登録しました！');
+})
 
 // AI食材相談室用APIエンドポイント
 router.post('/food-advisor', async (req, res) => {

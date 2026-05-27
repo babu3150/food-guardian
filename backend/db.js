@@ -22,7 +22,8 @@ async function initDB() {
      CREATE TABLE IF NOT EXISTS users (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        username TEXT NOT NULL UNIQUE,
-       password TEXT NOT NULL
+       password TEXT NOT NULL,
+       memo TEXT DEFAULT ''
      )
    `);
 
@@ -96,5 +97,18 @@ async function freezeFood(id) {
     await db.run(`UPDATE foods SET frozen = ? WHERE id = ?`, [1, id]);
 }
 
+// メモの取得
+async function getMemo(username) {
+    const db = await dbPromise;
+    const user = await db.get(`SELECT memo FROM users WHERE username = ?`, [username]);
+    return user.memo;
+}
+
+// メモの保存
+async function updateMemo(username, memo) {
+    const db = await dbPromise;
+    await db.run(`UPDATE users SET memo = ? WHERE username = ?`, [memo, username]);
+}
+
 // 上記関数をモジュールとしてエクスポート
-module.exports = { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood };
+module.exports = { createUser, authenticateUser, getFoods, addFood, deleteFood, freezeFood, getMemo, updateMemo };

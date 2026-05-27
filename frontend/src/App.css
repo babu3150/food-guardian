@@ -212,6 +212,47 @@ button.ask:active {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+.memo-area {
+  margin-top: 30px;
+}
+
+.memo-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 18px;
+  border-radius: 18px;
+  border: none;
+  background-color: rgba(255,255,255,0.88);
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.memo-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(79,172,254,0.35);
+}
+
+.memo-button-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.memo-save-button {
+  background: linear-gradient(135deg, #f4a261, #e76f51);
+  padding: 12px 24px;
+  font-size: 15px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.memo-save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(231,111,81,0.35);
+  opacity: 0.95;
+}
+
 .food-list {
   display: flex;
   flex-direction: column;

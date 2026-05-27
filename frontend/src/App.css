@@ -216,6 +216,10 @@ button.ask:active {
   margin-top: 30px;
 }
 
+.memo-textarea-wrapper {
+  position: relative;
+}
+
 .memo-textarea {
   width: 100%;
   min-height: 180px;
@@ -251,6 +255,21 @@ button.ask:active {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(231,111,81,0.35);
   opacity: 0.95;
+}
+
+.memo-saved-message {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: rgba(46, 94, 63, 0.92);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  animation: fadeInOut 2.5s ease;
 }
 
 .food-list {
@@ -443,6 +462,26 @@ button.ask:active {
   to {
     transform: translateY(-14px);
     opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 

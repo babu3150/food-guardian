@@ -9,6 +9,8 @@ function HomePage({ onLogout, onMoveFoodAdvisor }) {
     const [foods, setFoods] = useState([]);
     // メモ管理用ステート
     const [memo, setMemo] = useState('');
+    // メモ保存判定用ステート
+    const [memoSaved, setMemoSaved] = useState(false);
 
     // コンポーネントのマウント後に食材の一覧リスト、メモを取得（第2引数を空にすることで初回レンダリング時のみ実行）
     useEffect(() => {
@@ -103,7 +105,10 @@ function HomePage({ onLogout, onMoveFoodAdvisor }) {
         });
 
         if (response.ok) {
-            alert('備忘録を保存したぞよ');
+            setMemoSaved(true);
+            setTimeout(() => {
+                setMemoSaved(false);
+            }, 2500);
         }
     }
 
@@ -128,7 +133,12 @@ function HomePage({ onLogout, onMoveFoodAdvisor }) {
                 <div className="section-title">
                     <h2>備忘録</h2>
                 </div>
-                <textarea className="memo-textarea" value={memo} onChange={handleChangeMemo} placeholder="買い足す食材や忘れてはならぬことを書かれよ" />
+                <div className="memo-textarea-wrapper">
+                    <textarea className="memo-textarea" value={memo} onChange={handleChangeMemo} placeholder="買い足す食材や忘れてはならぬことを書かれよ" />
+                    {memoSaved && (
+                        <p className="memo-saved-message">保存したぞよ</p>
+                    )}
+                </div>
                 <div className="memo-button-area">
                     <button className="memo-save-button" onClick={handleSaveMemo}>忘れぬよう保存</button>
                 </div>

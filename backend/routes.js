@@ -45,6 +45,7 @@ router.post('/signup', async (req, res) => {
     try {
         const { username, password } = req.body;
         await createUser(username, password);
+        req.session.username = username;
         res.status(201).send('ユーザー登録完了！');
     } catch (error) {
         res.status(500).send('ユーザー登録に失敗しました。');

@@ -33,9 +33,10 @@ function App() {
     }
   };
 
-  // ユーザー登録
+  // ユーザー登録（登録後はホーム画面に遷移）
   const handleSignup = () => {
-    setPage('login');
+    setIsLoggedIn(true);
+    setPage('home');
   }
 
   return (

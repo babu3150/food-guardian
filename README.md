@@ -1,4 +1,4 @@
-# food-guardian（食材の守護者）
+# food-guardian（食材の番人）
 https://food-guardian.net
 
 ## これは何？

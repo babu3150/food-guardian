@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 
 function SignupForm( { onSignup } ) {
     // 3つのステートを定義し、フォーム送信時に実行

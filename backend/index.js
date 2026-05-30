@@ -29,7 +29,9 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 // '/api'パスに対するルートハンドラの設定
 app.use("/api", routes);
 
-// テスト中はここで動かす
-app.listen(3000, () => {
-  console.log("サーバーはポート3000で起動中");
+// ポート3000で起動する
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`サーバーはポート${PORT}で起動中`);
 });

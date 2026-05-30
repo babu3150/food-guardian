@@ -80,7 +80,7 @@ async function getFoods(username) {
 }
 
 // 食材の追加
-async function addFood(username, { name, expiration_date, quantity }) {
+async function addFood(username, { name, expiration_date }) {
     const db = await dbPromise;
     await db.run(`INSERT INTO foods (username, name, expiration_date) VALUES (?, ?, ?)`, [username, name, expiration_date]);
 }

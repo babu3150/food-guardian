@@ -9,8 +9,8 @@
 https://food-guardian.net
 
 ## テスト用アカウント
-ID：testuser
-Password：p4wk
+* ID：testuser
+* Password：p4wk
 
 ## 使用技術
 

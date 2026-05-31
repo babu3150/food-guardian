@@ -32,7 +32,7 @@ async function initDB() {
     "testuser",
   ]);
   if (!user) {
-    await createUser("testuser", "test");
+    await createUser("testuser", "p4wk");
   }
 
   /* foodsテーブルの作成

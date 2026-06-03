@@ -45,7 +45,7 @@ function FoodForm({ onAddFood }) {
         required
       />
       <button type="submit" className="add">
-        いただきます
+        いってらっしゃい
       </button>
     </form>
   );

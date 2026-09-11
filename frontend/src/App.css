@@ -21,11 +21,20 @@ hr {
 
 input {
   width: 100%;
+  height: 40px;
   padding: 8px;
   margin: 8px 0;
-  border: 1px solid #ccc;
+  background-color: #333;
+  border: 1px solid #888;
   border-radius: 4px;
+  color: #fff;
   cursor: pointer;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 
 button {
@@ -39,6 +48,7 @@ button {
 
 button.login {
   background-color: #22c55e;
+  width: 100%;
 }
 
 button.login:hover {
@@ -138,14 +148,50 @@ button.ask:active {
 
 .login-page,
 .signup-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 24px;
-  background-color: #808080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30px 20px 20px;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
+    url("./images/jail-wallpaper.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.login-logo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.login-logo img {
+  display: block;
+  width: 520px;
+  max-width: 80vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.login-main {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 
 .login-form-area,
@@ -154,8 +200,17 @@ button.ask:active {
   max-width: 420px;
 }
 
+.login-form-area h1 {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
 .login-link-button,
 .signup-link-button {
+  margin-left: -15px;
   background: none;
   border: none;
   color: #d9b36c;
@@ -164,16 +219,32 @@ button.ask:active {
   font-size: 14px;
 }
 
-.login-image-area,
+.login-guardian,
 .signup-image-area {
-  width: 320px;
-  max-width: 100%;
-  height: auto;
+  position: relative;
+  z-index: 2;
+  width: 420px;
+  margin-left: 30px;
+  margin-bottom: -60px;
+  pointer-events: none;
 }
 
-.food-guardian-image {
-  width: 400px;
+.login-guardian img {
+  display: block;
+  width: 100%;
   height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.35));
+}
+
+.signup-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 15px;
+  color: #d9b36c;
 }
 
 .home-page {
@@ -491,7 +562,6 @@ button.ask:active {
 @media (max-width: 900px) {
   .login-page,
   .signup-page {
-    flex-direction: column;
     text-align: center;
   }
 

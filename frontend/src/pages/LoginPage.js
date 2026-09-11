@@ -1,24 +1,34 @@
 import React from "react";
 // ログインフォーム用コンポーネント
 import LoginForm from "../components/LoginForm";
+import logoImage from "../images/app-logo.png";
+import guardianSignInImage from "../images/guardian-signin.png";
 
 function LoginPage({ onLogin, onMoveSignup }) {
   return (
     <div className="login-page">
-      <div className="login-form-area">
-        <h2>食材の番人</h2>
-        <LoginForm onLogin={onLogin} />
-        <button className="signup-link-button" onClick={onMoveSignup}>
-          冷蔵庫の主でない者はこちら
-        </button>
+
+      <div className="login-logo">
+        <img src={logoImage} alt="食材の番人" />
       </div>
-      <div className="login-image-area">
-        <img
-          src="/food-guardian.png"
-          alt="食材の番人"
-          className="food-guardian-image"
-        />
+
+      <div className="login-main">
+        <div className="login-form-area">
+
+          <LoginForm onLogin={onLogin} />
+          <div className="signup-area">
+            <span>冷蔵庫の主でない者は</span>
+            <button className="signup-link-button" onClick={onMoveSignup}>
+              こちら
+            </button>
+          </div>
+        </div>
+
+        <div className="login-guardian">
+          <img src={guardianSignInImage} alt="番人" />
+        </div>
       </div>
+
     </div>
   );
 }

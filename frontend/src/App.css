@@ -321,43 +321,6 @@ button.ask:active {
   box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.35);
 }
 
-.memo-button-area {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
-
-.memo-save-button {
-  background: linear-gradient(135deg, #f4a261, #e76f51);
-  padding: 12px 24px;
-  font-size: 15px;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s,
-    opacity 0.2s;
-}
-
-.memo-save-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(231, 111, 81, 0.35);
-  opacity: 0.95;
-}
-
-.memo-saved-message {
-  position: absolute;
-  right: 18px;
-  bottom: 16px;
-  margin: 0;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background-color: rgba(46, 94, 63, 0.92);
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  pointer-events: none;
-  animation: fadeInOut 2.5s ease;
-}
-
 .food-list {
   display: flex;
   flex-direction: column;

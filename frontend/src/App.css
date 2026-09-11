@@ -162,7 +162,7 @@ button.ask:active {
   align-items: center;
   box-sizing: border-box;
   padding: 30px 20px 20px;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
     url("./images/jail-wallpaper.png");
   background-size: cover;

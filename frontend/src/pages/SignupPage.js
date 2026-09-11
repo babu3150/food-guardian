@@ -7,7 +7,6 @@ import guardianSignUpImage from "../images/guardian-signup.png";
 function SignupPage({ onSignup, onMoveLogin }) {
   return (
     <div className="signup-page">
-
       <div className="signup-logo">
         <img src={logoImage} alt="食材の番人" />
       </div>
@@ -27,7 +26,6 @@ function SignupPage({ onSignup, onMoveLogin }) {
           <img src={guardianSignUpImage} alt="番人" />
         </div>
       </div>
-
     </div>
   );
 }

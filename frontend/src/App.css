@@ -31,11 +31,13 @@ input {
   box-sizing: border-box;
 }
 
-.login-form input {
+.login-form input,
+.signup-form input {
   background-color: #333;
 }
 
-.login-form input::placeholder {
+.login-form input::placeholder,
+.signup-form input::placeholder {
   color: #fff;
   opacity: 1;
 }
@@ -68,6 +70,7 @@ button.logout:hover {
 
 button.signup {
   background-color: #9b7de2;
+  width: 100%;
 }
 
 button.signup:hover {
@@ -168,14 +171,16 @@ button.ask:active {
   overflow: hidden;
 }
 
-.login-logo {
+.login-logo,
+.signup-logo {
   position: relative;
   z-index: 2;
   text-align: center;
   margin-top: -30px;
 }
 
-.login-logo img {
+.login-logo img,
+.signup-logo img {
   display: block;
   margin: 0 auto;
   width: 520px;
@@ -184,7 +189,8 @@ button.ask:active {
   object-fit: contain;
 }
 
-.login-main {
+.login-main,
+.signup-main {
   position: absolute;
   top: 65%;
   left: 50%;
@@ -204,14 +210,6 @@ button.ask:active {
   max-width: 420px;
 }
 
-.login-form-area h1 {
-  margin: 0 0 28px;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  color: #fff;
-}
-
 .login-link-button,
 .signup-link-button {
   margin-left: -15px;
@@ -224,6 +222,7 @@ button.ask:active {
 }
 
 .login-guardian,
+.signup-guardian,
 .signup-image-area {
   position: relative;
   z-index: 2;
@@ -233,7 +232,8 @@ button.ask:active {
   pointer-events: none;
 }
 
-.login-guardian img {
+.login-guardian img,
+.signup-guardian img {
   display: block;
   width: 100%;
   height: auto;
@@ -241,6 +241,7 @@ button.ask:active {
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.35));
 }
 
+.login-area,
 .signup-area {
   display: flex;
   align-items: center;
@@ -569,13 +570,15 @@ button.ask:active {
     text-align: center;
   }
 
-  .login-logo img {
+  .login-logo img,
+  .signup-logo img {
     width: 80%;
     max-width: 450px;
     height: auto;
   }
 
   .login-main,
+  .signup-main,
   .food-advisor-content {
     flex-direction: column;
     align-items: center;
@@ -584,12 +587,14 @@ button.ask:active {
   }
 
   .login-form-area,
+  .signup-form-area,
   .food-advisor-form-area {
     width: 100%;
     max-width: 700px;
   }
 
   .login-guardian,
+  .signup-guardian,
   .food-advisor-image-area {
     width: 100%;
     display: flex;
@@ -597,6 +602,7 @@ button.ask:active {
   }
 
   .login-guardian img,
+  .signup-guardian img,
   .food-advisor-image {
     width: 70%;
     max-width: 320px;

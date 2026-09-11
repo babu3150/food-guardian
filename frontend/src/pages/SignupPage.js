@@ -1,24 +1,33 @@
 import React from "react";
 // ユーザー登録フォーム用コンポーネント
 import SignupForm from "../components/SignupForm";
+import logoImage from "../images/app-logo.png";
+import guardianSignUpImage from "../images/guardian-signup.png";
 
 function SignupPage({ onSignup, onMoveLogin }) {
   return (
     <div className="signup-page">
-      <div className="signup-form-area">
-        <h2>冷蔵庫の主となる手続き</h2>
-        <SignupForm onSignup={onSignup} />
-        <button className="login-link-button" onClick={onMoveLogin}>
-          冷蔵庫の扉を開く者はこちら
-        </button>
+
+      <div className="signup-logo">
+        <img src={logoImage} alt="食材の番人" />
       </div>
-      <div className="signup-image-area">
-        <img
-          src="/food-guardian-signup.png"
-          alt="食材の番人"
-          className="food-guardian-image"
-        />
+
+      <div className="signup-main">
+        <div className="signup-form-area">
+          <SignupForm onSignup={onSignup} />
+          <div className="login-area">
+            <span>冷蔵庫の扉を開く者は</span>
+            <button className="login-link-button" onClick={onMoveLogin}>
+              こちら
+            </button>
+          </div>
+        </div>
+
+        <div className="signup-guardian">
+          <img src={guardianSignUpImage} alt="番人" />
+        </div>
       </div>
+
     </div>
   );
 }

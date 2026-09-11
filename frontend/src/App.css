@@ -490,7 +490,7 @@ button.ask:active {
   justify-content: center;
 }
 
-.food-advisor-image {
+.food-advisor-image-area img {
   width: 100%;
   max-width: 400px;
   border-radius: 20px;
@@ -603,7 +603,7 @@ button.ask:active {
 
   .login-guardian img,
   .signup-guardian img,
-  .food-advisor-image {
+  .food-advisor-image-area img {
     width: 70%;
     max-width: 320px;
   }

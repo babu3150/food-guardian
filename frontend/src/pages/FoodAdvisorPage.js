@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import guardianOperatorImage from "../images/guardian-operator.png";
 
 function FoodAdvisorPage({ onLogout, onMoveHome }) {
   const [food, setFood] = useState("");
@@ -106,11 +107,7 @@ function FoodAdvisorPage({ onLogout, onMoveHome }) {
 
         {/* 右部分 */}
         <div className="food-advisor-image-area">
-          <img
-            src="/guardian-operator.png"
-            alt="AI番人"
-            className="food-advisor-image"
-          />
+          <img src={guardianOperatorImage} alt="AI番人" />
         </div>
       </div>
     </div>

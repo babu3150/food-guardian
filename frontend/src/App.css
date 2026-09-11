@@ -425,13 +425,14 @@ button.ask:active {
 }
 
 .food-advisor-page {
+  min-height: 100vh;
   background:
     linear-gradient(rgba(20, 40, 30, 0.75), rgba(20, 40, 30, 0.75)),
     url("./images/food-wallpaper.png");
-
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .food-advisor-content {

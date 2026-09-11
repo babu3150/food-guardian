@@ -14,7 +14,6 @@ function LoginPage({ onLogin, onMoveSignup }) {
 
       <div className="login-main">
         <div className="login-form-area">
-
           <LoginForm onLogin={onLogin} />
           <div className="signup-area">
             <span>冷蔵庫の主でない者は</span>

@@ -177,6 +177,7 @@ button.ask:active {
 
 .login-logo img {
   display: block;
+  margin: 0 auto;
   width: 520px;
   max-width: 80vw;
   height: auto;
@@ -568,27 +569,34 @@ button.ask:active {
     text-align: center;
   }
 
-  .food-guardian-image {
-    width: 240px;
+  .login-logo img {
+    width: 80%;
+    max-width: 450px;
+    height: auto;
   }
 
+  .login-main,
   .food-advisor-content {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    top: 60%;
   }
 
+  .login-form-area,
   .food-advisor-form-area {
     width: 100%;
     max-width: 700px;
   }
 
+  .login-guardian,
   .food-advisor-image-area {
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
+  .login-guardian img,
   .food-advisor-image {
     width: 70%;
     max-width: 320px;

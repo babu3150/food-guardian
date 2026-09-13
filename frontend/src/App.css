@@ -26,13 +26,14 @@ input {
   margin: 8px 0;
   border: 1px solid #888;
   border-radius: 4px;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   box-sizing: border-box;
 }
 
 .login-form input,
 .signup-form input {
+  color: #fff;
   background-color: #333;
 }
 

@@ -43,6 +43,10 @@ input {
   opacity: 1;
 }
 
+.login-form p {
+  color: #f00;
+}
+
 button {
   padding: 10px 16px;
   color: white;

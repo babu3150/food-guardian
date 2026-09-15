@@ -143,15 +143,21 @@ SQLite3
 期限切れ・期限当日の食材は表示色を変更し、優先して消費する必要がある食材を直感的に把握できるよう視認性を高めました。
 また、OpenAIのAPIキーをフロントエンドに公開せず、バックエンド経由でOpenAI APIを呼び出す構成とすることで、APIキーの漏洩リスクにも配慮しました。
 
-## ローカル環境構築
+## ローカル環境構築（OSはUbuntu24.04 LTS）
 
-### 1. リポジトリをクローン
+### 1. 必要なパッケージをインストール
+```bash
+sudo apt update
+sudo apt install -y git npm
+```
+
+### 2. リポジトリをクローン
 ```bash
 git clone https://github.com/babu3150/food-guardian.git
 cd food-guardian
 ```
 
-### 2. バックエンドのセットアップ・環境変数の設定
+### 3. バックエンドのセットアップ・環境変数の設定
 ```bash
 cd backend
 npm install
@@ -162,14 +168,14 @@ OPENAI_API_KEY=your_api_key
 node index.js
 ```
 
-### 3. フロントエンドのセットアップ（別ターミナルにて実行）
+### 4. フロントエンドのセットアップ（別ターミナルにて実行）
 ```bash
 cd frontend
 npm install
-npm start
+npm run build
 ```
 
-### 4. アクセス
+### 5. アクセス
 http://localhost:3000
 
 ### 備考
